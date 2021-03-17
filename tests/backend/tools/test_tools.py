@@ -1,10 +1,11 @@
 # FIXME
 
-from datetime import date, datetime, timedelta
+from datetime import datetime, timedelta
 from dateutil.relativedelta import relativedelta
 import pytest
 
 from jobfunnel.backend.tools.tools import calc_post_date_from_relative_str
+
 
 # test calc_post_date_from_relative_str
 # try parametrized testing
@@ -17,11 +18,12 @@ from jobfunnel.backend.tools.tools import calc_post_date_from_relative_str
     ("just posted", datetime.now().replace(hour=0, minute=0, second=0, microsecond=0))
 ])
 def test_calc_post_date_from_relative_str(test_input, expected):
-    print(test_input, " ", expected)
+    #print(test_input, " ", expected)
     assert calc_post_date_from_relative_str(test_input) == expected
 
 
-def test_wrong_format():
-    post_date_str = "########"
-    with pytest.raises(ValueError):
-        calc_post_date_from_relative_str(post_date_str)
+#
+# def test_wrong_format():
+#     post_date_str = "########"
+#     with pytest.raises(ValueError):
+#         calc_post_date_from_relative_str(post_date_str)
