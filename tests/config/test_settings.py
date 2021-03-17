@@ -35,6 +35,13 @@ def test_settings():
     assert SettingsValidator.validate(TEST_STRUCTURE_FALSE) == TrueValidator.validate(TEST_STRUCTURE_FALSE)
 
 
-def test_ipv4_address_validation():
+def test_ipv4_address_validation_true():
+    SettingsValidator = JobFunnelSettingsValidator(SETTINGS_YAML_SCHEMA)
+    assert SettingsValidator._validate_type_ipv4address('127.0.0.1') == True
+
+def test_ipv4_address_validation_exception():
+    SettingsValidator = JobFunnelSettingsValidator(SETTINGS_YAML_SCHEMA)
+    with pytest.raises(Exception):
+        SettingsValidator._validate_type_ipv4address('NULL')
 
 
