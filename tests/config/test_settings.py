@@ -34,3 +34,7 @@ def test_settings():
     assert SettingsValidator.validate(TEST_STRUCTURE_MINIMUM) == TrueValidator.validate(TEST_STRUCTURE_MINIMUM)
     assert SettingsValidator.validate(TEST_STRUCTURE_FALSE) == TrueValidator.validate(TEST_STRUCTURE_FALSE)
 
+
+def test_ipv4_address_validation():
+
+
