@@ -8,6 +8,7 @@ from jobfunnel.resources.defaults import (
     DEFAULT_DOMAIN_FROM_LOCALE,
 )
 
+
 class SearchConfig(BaseConfig):
     """Config object containing our desired job search information including
     the Locale of the searcher, the region to search and what job providers to

@@ -560,3 +560,5 @@ class JobFunnel(Logger):
                 "file set. Saving to a duplicates file will ensure "
                 "that jobs detected to be duplicates by contents persist."
             )
+
+
