@@ -59,7 +59,6 @@ def test_manager_config_scrapers_exception():
         result = mng.scrapers
 
 
-
 @patch('jobfunnel.config.JobFunnelConfigManager.validate')
 def test_manager_validate_ip_positive(mock_validate):
     search = mock.Mock()
@@ -67,3 +66,13 @@ def test_manager_validate_ip_positive(mock_validate):
     mng.validate()
     assert mng.validate == mock_validate
     assert mock_validate.called
+
+
+@patch('jobfunnel.config.JobFunnelConfigManager.create_dirs')
+def test_manager_create_dirs(mock_create):
+    search = mock.Mock()
+    mng = JobFunnelConfigManager("a", "b", "c", "d", search, "e")
+    mng.create_dirs()
+    assert mng.create_dirs == mock_create
+    assert mock_create.called
+
