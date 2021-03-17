@@ -1,6 +1,7 @@
 # FIXME
 
 from datetime import datetime, timedelta
+from datetime import date, datetime, timedelta
 from dateutil.relativedelta import relativedelta
 import pytest
 
@@ -27,3 +28,4 @@ def test_calc_post_date_from_relative_str(test_input, expected):
 #     post_date_str = "########"
 #     with pytest.raises(ValueError):
 #         calc_post_date_from_relative_str(post_date_str)
+
